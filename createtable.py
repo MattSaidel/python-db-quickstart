@@ -17,9 +17,11 @@ def main():
     
     data = csv.DictReader(open("test.csv"))
 
+    listdata = []
     for row in data:
+      listdata.append(row)
 
-    db_engine.execute(people.insert(), [data])
+    db_engine.execute(people.insert(), listdata)
 
 if __name__ == '__main__':
     # execute this block of code if this script is run from command line
